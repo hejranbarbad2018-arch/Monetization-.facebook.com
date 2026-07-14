@@ -78,7 +78,7 @@ color:green;
 }
 
 
-/* Popup */
+/* Small Popup */
 
 .popup{
 position:fixed;
@@ -86,7 +86,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.6);
+background:rgba(0,0,0,.5);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -95,11 +95,16 @@ z-index:999;
 
 .popup-box{
 background:white;
-width:85%;
-max-width:380px;
-padding:25px;
-border-radius:20px;
+width:80%;
+max-width:320px;
+padding:20px;
+border-radius:15px;
 text-align:center;
+font-size:15px;
+}
+
+.popup-box h2{
+font-size:22px;
 }
 
 .close{
@@ -133,23 +138,18 @@ padding:0;
 <h2>Important Notice</h2>
 
 <p>
-We cannot guarantee a 100% approval or monetization of your account.
+We cannot guarantee 100% approval or monetization of your account.
 </p>
 
 <p>
-However, accounts that meet the required criteria have a higher chance of approval.
+Most accounts that meet the requirements have a high chance of approval.
 </p>
 
 <p>
-Thank you for your trust and cooperation.
+Thank you for your trust.
 <br><br>
-Best regards,<br>
 Monetization Group Company
 </p>
-
-<button onclick="closePopup()">
-Continue
-</button>
 
 </div>
 
@@ -215,6 +215,7 @@ Your request has been received and will be reviewed within 24 hours.
 </div>
 
 
+
 <button onclick="window.open('report.html','_blank')">
 Report
 </button>
@@ -235,9 +236,7 @@ document.getElementById("myForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
-
 let formData=new FormData(this);
-
 
 fetch("https://formspree.io/f/xzdnbyqa",{
 method:"POST",
@@ -249,7 +248,6 @@ headers:{
 
 
 document.getElementById("waiting").style.display="block";
-
 
 this.reset();
 
