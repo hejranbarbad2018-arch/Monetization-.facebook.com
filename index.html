@@ -84,8 +84,11 @@ button{
 
 
 <div class="header">
+
 <h1>Monetization</h1>
+
 <p>Join our earning program</p>
+
 </div>
 
 
@@ -95,18 +98,18 @@ button{
 <h2>Welcome</h2>
 
 
-<form action="https://formspree.io/f/xzdnbyqa" method="POST" id="myForm">
+<form id="myForm">
 
 
-<input type="text" 
-name="name" 
-placeholder="User Name" 
+<input type="text"
+name="name"
+placeholder="User Name"
 required>
 
 
-<input type="tel" 
-name="phone" 
-placeholder="Mobile Number" 
+<input type="tel"
+name="phone"
+placeholder="Mobile Number"
 required>
 
 
@@ -152,13 +155,32 @@ Report
 
 <script>
 
-document.getElementById("myForm").addEventListener("submit", function(){
+document.getElementById("myForm").addEventListener("submit", function(e){
 
-setTimeout(function(){
+e.preventDefault();
+
+
+let formData = new FormData(this);
+
+
+fetch("https://formspree.io/f/xzdnbyqa", {
+
+method:"POST",
+
+body:formData,
+
+headers:{
+"Accept":"application/json"
+}
+
+});
+
 
 document.getElementById("waiting").style.display="block";
 
-},1000);
+
+this.reset();
+
 
 });
 
