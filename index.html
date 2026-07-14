@@ -9,66 +9,62 @@
 <style>
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#1877f2,#00c853);
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#1877f2,#00c853);
 }
 
 .header{
-    text-align:center;
-    color:white;
-    padding:35px 10px;
-}
-
-.header h1{
-    font-size:32px;
+text-align:center;
+color:white;
+padding:35px;
 }
 
 .card{
-    background:white;
-    width:85%;
-    max-width:400px;
-    margin:auto;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+background:white;
+width:85%;
+max-width:400px;
+margin:auto;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 h2{
-    text-align:center;
-    color:#1877f2;
+text-align:center;
+color:#1877f2;
 }
 
 input{
-    width:90%;
-    padding:15px;
-    margin:10px 0;
-    border-radius:10px;
-    border:1px solid #ddd;
-    font-size:16px;
+width:90%;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ddd;
 }
 
 button{
-    width:100%;
-    padding:15px;
-    margin-top:10px;
-    background:#1877f2;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
+width:100%;
+padding:15px;
+margin-top:10px;
+background:#1877f2;
+color:white;
+border:0;
+border-radius:10px;
+font-size:18px;
 }
 
 .info{
-    margin-top:20px;
-    background:#f0f2f5;
-    padding:15px;
-    border-radius:10px;
+margin-top:20px;
+background:#f0f2f5;
+padding:15px;
+border-radius:10px;
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -82,8 +78,8 @@ button{
 </div>
 
 
-<div class="card">
 
+<div class="card">
 
 <h2>Welcome</h2>
 
@@ -93,17 +89,19 @@ button{
 
 <input type="text" 
 name="name" 
-placeholder="User Name" 
+placeholder="User Name"
 required>
 
 
-<input type="tel" 
-name="phone" 
-placeholder="Mobile Number" 
+<input type="tel"
+name="phone"
+placeholder="Mobile Number"
 required>
 
 
-<input type="hidden" name="_next" value="thankyou.html">
+<input type="hidden" 
+name="_next" 
+value="https://YOUR-GITHUB-LINK/thankyou.html">
 
 
 <button type="submit">
@@ -124,7 +122,9 @@ Submit
 
 
 <button onclick="window.open('report.html','_blank')">
+
 Report
+
 </button>
 
 
