@@ -78,7 +78,7 @@ color:green;
 }
 
 
-/* Small Popup */
+/* Popup */
 
 .popup{
 position:fixed;
@@ -107,20 +107,6 @@ font-size:15px;
 font-size:22px;
 }
 
-.close{
-position:absolute;
-right:25px;
-top:25px;
-width:35px;
-height:35px;
-background:red;
-color:white;
-border:none;
-border-radius:50%;
-font-size:22px;
-padding:0;
-}
-
 </style>
 
 </head>
@@ -133,7 +119,6 @@ padding:0;
 
 <div class="popup-box">
 
-<button class="close" onclick="closePopup()">×</button>
 
 <h2>Important Notice</h2>
 
@@ -150,6 +135,12 @@ Thank you for your trust.
 <br><br>
 Monetization Group Company
 </p>
+
+
+<button onclick="closePopup()">
+Continue
+</button>
+
 
 </div>
 
@@ -174,6 +165,7 @@ Monetization Group Company
 
 <form id="myForm">
 
+
 <input type="text"
 name="name"
 placeholder="User Name"
@@ -189,6 +181,7 @@ required>
 <button type="submit">
 Submit
 </button>
+
 
 </form>
 
@@ -228,33 +221,11 @@ Report
 <script>
 
 function closePopup(){
+
 document.getElementById("popup").style.display="none";
+
 }
+
 
 
 document.getElementById("myForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let formData=new FormData(this);
-
-fetch("https://formspree.io/f/xzdnbyqa",{
-method:"POST",
-body:formData,
-headers:{
-"Accept":"application/json"
-}
-});
-
-
-document.getElementById("waiting").style.display="block";
-
-this.reset();
-
-});
-
-</script>
-
-
-</body>
-</html>
