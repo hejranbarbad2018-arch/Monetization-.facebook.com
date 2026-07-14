@@ -58,6 +58,7 @@ color:white;
 border:none;
 border-radius:10px;
 font-size:18px;
+cursor:pointer;
 }
 
 .info{
@@ -80,17 +81,17 @@ color:green;
 
 /* Popup */
 
-.popup{
+#popup{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.5);
+background:rgba(0,0,0,0.5);
 display:flex;
 justify-content:center;
 align-items:center;
-z-index:999;
+z-index:9999;
 }
 
 .popup-box{
@@ -100,11 +101,6 @@ max-width:320px;
 padding:20px;
 border-radius:15px;
 text-align:center;
-font-size:15px;
-}
-
-.popup-box h2{
-font-size:22px;
 }
 
 </style>
@@ -115,10 +111,9 @@ font-size:22px;
 <body>
 
 
-<div id="popup" class="popup">
+<div id="popup">
 
 <div class="popup-box">
-
 
 <h2>Important Notice</h2>
 
@@ -137,7 +132,7 @@ Monetization Group Company
 </p>
 
 
-<button onclick="closePopup()">
+<button id="continueBtn">
 Continue
 </button>
 
@@ -160,72 +155,4 @@ Continue
 
 <div class="card">
 
-<h2>Welcome</h2>
-
-
-<form id="myForm">
-
-
-<input type="text"
-name="name"
-placeholder="User Name"
-required>
-
-
-<input type="tel"
-name="phone"
-placeholder="Mobile Number"
-required>
-
-
-<button type="submit">
-Submit
-</button>
-
-
-</form>
-
-
-
-<div id="waiting">
-
-<h3>Waiting for approval</h3>
-
-<p>
-Your request has been received and will be reviewed within 24 hours.
-</p>
-
-</div>
-
-
-
-<div class="info">
-
-✅ Secure Registration<br>
-⭐ Monetization Support<br>
-💰 Earn Online
-
-</div>
-
-
-
-<button onclick="window.open('report.html','_blank')">
-Report
-</button>
-
-
-</div>
-
-
-
-<script>
-
-function closePopup(){
-
-document.getElementById("popup").style.display="none";
-
-}
-
-
-
-document.getElementById("myForm").addEventListener("submit",function(e){
+<h2
