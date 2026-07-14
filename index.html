@@ -78,36 +78,6 @@ color:green;
 }
 
 
-/* Money */
-
-.money{
-position:fixed;
-font-size:45px;
-animation:float 4s infinite;
-}
-
-.money1{
-top:15%;
-left:8%;
-}
-
-.money2{
-top:45%;
-right:8%;
-}
-
-.money3{
-bottom:15%;
-left:12%;
-}
-
-@keyframes float{
-50%{
-transform:translateY(-20px);
-}
-}
-
-
 /* Popup */
 
 .popup{
@@ -140,6 +110,7 @@ width:35px;
 height:35px;
 background:red;
 color:white;
+border:none;
 border-radius:50%;
 font-size:22px;
 padding:0;
@@ -148,6 +119,7 @@ padding:0;
 </style>
 
 </head>
+
 
 <body>
 
@@ -182,12 +154,6 @@ Continue
 </div>
 
 </div>
-
-
-
-<div class="money money1">💰</div>
-<div class="money money2">💵</div>
-<div class="money money3">⭐</div>
 
 
 
@@ -269,6 +235,7 @@ document.getElementById("myForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
+
 let formData=new FormData(this);
 
 
@@ -282,6 +249,7 @@ headers:{
 
 
 document.getElementById("waiting").style.display="block";
+
 
 this.reset();
 
