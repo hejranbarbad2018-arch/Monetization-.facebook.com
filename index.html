@@ -71,21 +71,126 @@ button:hover{
 </body>
 </html>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #2563eb, #38bdf8);
-    min-height: 100vh;
-    color: white;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f0f2f5;
 }
 
-.container {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    width: 80%;
-    margin: 50px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.header{
+    background:#1877f2;
+    color:white;
+    padding:25px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.profile{
+    background:white;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.grid{
+    display:flex;
+    gap:15px;
+    margin:15px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    flex:1;
+    min-width:200px;
+    box-shadow:0 2px 8px #ddd;
+}
+
+.number{
+    font-size:28px;
+    font-weight:bold;
+    color:#1877f2;
+}
+
+.status{
+    color:#00a651;
+    font-weight:bold;
+}
+
+.progress{
+    background:#ddd;
+    height:12px;
+    border-radius:10px;
+}
+
+.progress span{
+    display:block;
+    width:75%;
+    height:12px;
+    background:#1877f2;
+    border-radius:10px;
+}
+
+.button{
+    background:#1877f2;
+    color:white;
+    padding:12px 25px;
+    border:0;
+    border-radius:8px;
 }
 </style>
+
+
+<div class="header">
+Professional Dashboard
+</div>
+
+<div class="profile">
+<h2>هجران زوند</h2>
+<p class="status">✓ Monetization Active</p>
+<p>Followers: 25,000</p>
+</div>
+
+
+<div class="grid">
+
+<div class="box">
+<h3>💰 Earnings</h3>
+<div class="number">$245.50</div>
+<p>This Month</p>
+</div>
+
+
+<div class="box">
+<h3>⭐ Stars</h3>
+<div class="number">1,250</div>
+<p>Total Stars</p>
+</div>
+
+
+<div class="box">
+<h3>🎬 Ads on Reels</h3>
+<div class="number">Active</div>
+<p>Eligible</p>
+</div>
+
+
+<div class="box">
+<h3>🎁 Bonuses</h3>
+<div class="number">$50</div>
+<p>Available</p>
+</div>
+
+</div>
+
+
+<div class="box" style="margin:15px;">
+<h3>Monetization Progress</h3>
+<div class="progress">
+<span></span>
+</div>
+<br>
+<button class="button">View Monetization</button>
+</div>
