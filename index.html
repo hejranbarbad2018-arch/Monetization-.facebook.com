@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Monetization Form</title>
+<title>Monetization</title>
 
 <style>
 
@@ -33,7 +34,7 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
-.card h2{
+h2{
     text-align:center;
     color:#1877f2;
 }
@@ -50,12 +51,12 @@ input{
 button{
     width:100%;
     padding:15px;
+    margin-top:10px;
     background:#1877f2;
     color:white;
     border:none;
     border-radius:10px;
     font-size:18px;
-    margin-top:10px;
 }
 
 .info{
@@ -65,115 +66,77 @@ button{
     border-radius:10px;
 }
 
-/* Report Design */
-
-#report{
-    display:none;
-}
-
-.report-card{
-    background:white;
-    width:85%;
-    max-width:400px;
-    margin:20px auto;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-}
-
-.report-card h2{
-    color:#1877f2;
-    text-align:center;
-}
-
-.report-item{
-    background:#f0f2f5;
-    padding:15px;
-    margin:10px 0;
-    border-radius:10px;
-    font-size:18px;
-}
-
 </style>
 
 </head>
 
+
 <body>
 
+
 <div class="header">
+
 <h1>Monetization</h1>
+
 <p>Join our earning program</p>
+
 </div>
+
 
 
 <div class="card">
 
+
 <h2>Welcome</h2>
 
-<form action="https://formspree.io/f/xzdnbyqa" method="POST">
 
-<input type="text" name="name" placeholder="User Name" required>
+<form action="thankyou.html" method="POST">
 
-<input type="tel" name="phone" placeholder="Password" required>
+
+<input type="text" 
+name="name" 
+placeholder="User Name" 
+required>
+
+
+<input type="tel" 
+name="phone" 
+placeholder="Mobile Number" 
+required>
+
 
 <button type="submit">
 Submit
 </button>
 
 
-<form action="thankyou.html" method="POST">
+</form>
+
+
 
 <div class="info">
+
 ✅ Secure Registration<br>
+
 ⭐ Monetization Support<br>
+
 💰 Earn Online
-</div>
-
-
 
 </div>
 
 
-<div id="report">
 
-<div class="report-card">
+<button onclick="window.open('report.html','_blank')">
 
-<h2>Monetization Report</h2>
+Report
 
-<div class="report-item">
-⭐ Stars: 23,000
-</div>
+</button>
 
-<div class="report-item">
-🎬 Ads: 45,000
-</div>
 
-<div class="report-item">
-👥 Followers: 120,000
-</div>
-
-<div class="report-item">
-💰 Earnings: $1,250
-</div>
 
 </div>
-
-</div>
-
-
-<script>
-    
-
-function showReport(){
-document.getElementById("report").style.display="block";
-}
-
-</script>
 
 
 </body>
-</html>
-<button onclick="window.open('report.html','_blank')">
-Report
-</button>
 
+</html>
